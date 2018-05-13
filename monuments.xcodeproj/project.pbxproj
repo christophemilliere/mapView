@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		C12014CF20A78D580088376D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12014CE20A78D580088376D /* AppDelegate.swift */; };
-		C12014D120A78D580088376D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12014D020A78D580088376D /* ViewController.swift */; };
 		C12014D420A78D580088376D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12014D220A78D580088376D /* Main.storyboard */; };
 		C12014D620A78D5A0088376D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C12014D520A78D5A0088376D /* Assets.xcassets */; };
 		C12014D920A78D5A0088376D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12014D720A78D5A0088376D /* LaunchScreen.storyboard */; };
+		C12014E420A78DF70088376D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12014E320A78DF70088376D /* MapViewController.swift */; };
+		C12014E620A793370088376D /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12014E520A793370088376D /* CLLocationExtension.swift */; };
+		C12014E820A798070088376D /* Monment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12014E720A798070088376D /* Monment.swift */; };
+		C12014EA20A79EA20088376D /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12014E920A79EA20088376D /* MyAnnotation.swift */; };
+		C12014EC20A83B300088376D /* MyGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12014EB20A83B300088376D /* MyGeocoder.swift */; };
+		C12014EE20A8420F0088376D /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12014ED20A8420F0088376D /* AnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C12014CB20A78D580088376D /* monuments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = monuments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12014CE20A78D580088376D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C12014D020A78D580088376D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C12014D320A78D580088376D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C12014D520A78D5A0088376D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C12014D820A78D5A0088376D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C12014DA20A78D5A0088376D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C12014E320A78DF70088376D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C12014E520A793370088376D /* CLLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExtension.swift; sourceTree = "<group>"; };
+		C12014E720A798070088376D /* Monment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monment.swift; sourceTree = "<group>"; };
+		C12014E920A79EA20088376D /* MyAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
+		C12014EB20A83B300088376D /* MyGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGeocoder.swift; sourceTree = "<group>"; };
+		C12014ED20A8420F0088376D /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,43 @@
 		C12014CD20A78D580088376D /* monuments */ = {
 			isa = PBXGroup;
 			children = (
+				C12014E220A78D860088376D /* Model */,
+				C12014E120A78D7B0088376D /* View */,
+				C12014E020A78D6C0088376D /* Controller */,
 				C12014CE20A78D580088376D /* AppDelegate.swift */,
-				C12014D020A78D580088376D /* ViewController.swift */,
 				C12014D220A78D580088376D /* Main.storyboard */,
 				C12014D520A78D5A0088376D /* Assets.xcassets */,
 				C12014D720A78D5A0088376D /* LaunchScreen.storyboard */,
 				C12014DA20A78D5A0088376D /* Info.plist */,
 			);
 			path = monuments;
+			sourceTree = "<group>";
+		};
+		C12014E020A78D6C0088376D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C12014E320A78DF70088376D /* MapViewController.swift */,
+				C12014E520A793370088376D /* CLLocationExtension.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C12014E120A78D7B0088376D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C12014ED20A8420F0088376D /* AnnotationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C12014E220A78D860088376D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C12014E720A798070088376D /* Monment.swift */,
+				C12014E920A79EA20088376D /* MyAnnotation.swift */,
+				C12014EB20A83B300088376D /* MyGeocoder.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C12014D120A78D580088376D /* ViewController.swift in Sources */,
 				C12014CF20A78D580088376D /* AppDelegate.swift in Sources */,
+				C12014E620A793370088376D /* CLLocationExtension.swift in Sources */,
+				C12014EA20A79EA20088376D /* MyAnnotation.swift in Sources */,
+				C12014EE20A8420F0088376D /* AnnotationView.swift in Sources */,
+				C12014EC20A83B300088376D /* MyGeocoder.swift in Sources */,
+				C12014E820A798070088376D /* Monment.swift in Sources */,
+				C12014E420A78DF70088376D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

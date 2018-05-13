@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="monuments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oh7-1m-6Sr">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnf-Wa-IFr">
+                                        <rect key="frame" x="8" y="10" width="88" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="5SG-WV-lFt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Me localiser">
+                                            <color key="titleColor" red="0.33063715700000001" green="0.4063152075" blue="0.49782294030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="locationAtion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ejE-xM-CBb"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7L9-T3-h7u">
+                                        <rect key="frame" x="104" y="11" width="263" height="29"/>
+                                        <segments>
+                                            <segment title="Standart"/>
+                                            <segment title="Satelilte"/>
+                                            <segment title="Hybrid"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.33063715700000001" green="0.4063152075" blue="0.49782294030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="afN-cz-x9f"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Dnf-Wa-IFr" firstAttribute="top" secondItem="oh7-1m-6Sr" secondAttribute="top" constant="10" id="Qxg-qf-lGE"/>
+                                    <constraint firstAttribute="trailing" secondItem="7L9-T3-h7u" secondAttribute="trailing" constant="8" id="a91-gs-FN4"/>
+                                    <constraint firstItem="7L9-T3-h7u" firstAttribute="leading" secondItem="Dnf-Wa-IFr" secondAttribute="trailing" constant="8" id="dNt-7K-U2g"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dnf-Wa-IFr" secondAttribute="bottom" constant="10" id="euX-h2-iJD"/>
+                                    <constraint firstItem="7L9-T3-h7u" firstAttribute="centerY" secondItem="oh7-1m-6Sr" secondAttribute="centerY" id="iov-lg-oe4"/>
+                                    <constraint firstItem="Dnf-Wa-IFr" firstAttribute="leading" secondItem="oh7-1m-6Sr" secondAttribute="leading" constant="8" id="vqg-RY-KWf"/>
+                                    <constraint firstAttribute="height" constant="50" id="yJN-fE-CAU"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xsf-AN-bkL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oh7-1m-6Sr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0hp-Y5-su4"/>
+                            <constraint firstItem="oh7-1m-6Sr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E9X-gc-DQ1"/>
+                            <constraint firstItem="xsf-AN-bkL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Est-hK-IzJ"/>
+                            <constraint firstItem="xsf-AN-bkL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Sg4-V1-qv7"/>
+                            <constraint firstItem="oh7-1m-6Sr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="crc-Pf-qfi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xsf-AN-bkL" secondAttribute="trailing" id="vvV-tl-Odo"/>
+                            <constraint firstItem="oh7-1m-6Sr" firstAttribute="top" secondItem="xsf-AN-bkL" secondAttribute="bottom" id="xNj-e6-YVe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapview" destination="xsf-AN-bkL" id="jO8-7s-CRg"/>
+                        <outlet property="myPostion" destination="Dnf-Wa-IFr" id="AhI-Q6-PCX"/>
+                        <outlet property="segment" destination="7L9-T3-h7u" id="jRs-tX-Mh5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
